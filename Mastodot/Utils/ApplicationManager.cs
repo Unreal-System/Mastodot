@@ -8,7 +8,7 @@ using Mastodot.Enums;
 
 namespace Mastodot.Utils
 {
-    public class ApplicationManager
+    public class ApplicaionManager
     {
         private static readonly string NoRedirect = "urn:ietf:wg:oauth:2.0:oob";
 

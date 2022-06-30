@@ -6,7 +6,7 @@ namespace Mastodot.Entities
     public class Account : BaseMastodonEntity
     {
         [JsonProperty("id")]
-        public int Id { get; set; }
+        public long Id { get; set; }
 
         [JsonProperty("username")]
         public string UserName { get; set; }
@@ -24,13 +24,13 @@ namespace Mastodot.Entities
         public DateTime CreatedAt { get; set; }
 
         [JsonProperty("followers_count")]
-        public int FollowersCount { get; set; }
+        public long FollowersCount { get; set; }
 
         [JsonProperty("following_count")]
-        public int FollowingCount { get; set; }
+        public long FollowingCount { get; set; }
 
         [JsonProperty("statuses_count")]
-        public int StatusesCount { get; set; }
+        public long StatusesCount { get; set; }
 
         [JsonProperty("note")]
         public string Note { get; set; }

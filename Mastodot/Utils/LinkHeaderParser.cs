@@ -19,8 +19,8 @@ namespace Mastodot.Utils
         public static LinkHeader GetHeader(string header)
         {
             var headerGroup = GetUrlsOperation(header);
-            int? next = null;
-            int? prev = null;
+            string next = null;
+            string prev = null;
 
             string tmp;
             if (headerGroup.TryGetValue(OPERATOR_NEXT, out tmp))
@@ -61,26 +61,26 @@ namespace Mastodot.Utils
             return headerPair;
         }
 
-        private static int? GetNextId(IDictionary<string, string> header)
+        private static string GetNextId(IDictionary<string, string> header)
         {
             string id = "";
             if (header?.TryGetValue(MAXID, out id) == true)
             {
-                return int.Parse(id);
+                return id;
             }
 
-            return null;
+            return id;
         }
 
-        private static int? GetPrevId(IDictionary<string, string> header)
+        private static string GetPrevId(IDictionary<string, string> header)
         {
             string id = "";
             if (header?.TryGetValue(SINCEID, out id) == true)
             {
-                return int.Parse(id);
+                return id;
             }
 
-            return null;
+            return id;
         }
 
         private static IDictionary<string, string> QueryParser(string header)

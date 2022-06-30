@@ -15,6 +15,6 @@ namespace Mastodot.Entities
         public string FullUserName { get; set; }
 
         [JsonProperty("id")]
-        public int Id { get; set; }
+        public long Id { get; set; }
     }
 }

@@ -97,7 +97,7 @@ namespace Mastodot
         /// <param name="sinceId">Get a list of followers with ID greater than this value</param>
         /// <param name="limit">Maximum number of accounts to get (Default 40, Max 80)</param>
         public Task<ResponseCollection<Account>> GetFollowers(int id
-                                                       , int? maxId = default(int?), int? sinceId = default(int?)
+                                                       , string maxId = default(string), int? sinceId = default(int?)
                                                        , int limit = 40)
         {
             var query = new Dictionary<string, object>()
@@ -118,7 +118,7 @@ namespace Mastodot
         /// <param name="sinceId">SinceID</param>
         /// <param name="limit">Maximum number of accounts to get (Default 40, Max 80)</param>
         public Task<ResponseCollection<Account>> GetFollowing(int id
-                                                       , int? maxId = default(int?), int? sinceId = default(int?)
+                                                       , string maxId = default(string), int? sinceId = default(int?)
                                                        , int limit = 40)
         {
             var query = new Dictionary<string, object>
@@ -142,7 +142,7 @@ namespace Mastodot
         /// <param name="limit">Maximum number of accounts to get(Default 20, Max 40)</param>
         public Task<ResponseCollection<Status>> GetStatuses(int id
                                                      , bool? onlyMedia = default(bool?), bool? excludeReplies = default(bool?)
-                                                     , int? maxId = default(int?), int? sinceId = default(int?)
+                                                     , string maxId = default(string), int? sinceId = default(int?)
                                                      , int limit = 20)
         {
             var query = new Dictionary<string, object>
@@ -217,26 +217,6 @@ namespace Mastodot
         }
 
         /// <summary>
-        /// Muting an account
-        /// </summary>
-        /// <returns>The target account's Relationship</returns>
-        /// <param name="id">Target AccountID</param>
-        public Task<Relationship> MuteBoosts(int id)
-        {
-            return GetClient().Post<Relationship>(string.Format(ApiMethods.MuteBoosts, id));
-        }
-
-        /// <summary>
-        /// Unmuting an acocunt
-        /// </summary>
-        /// <returns>The target account's Relationship</returns>
-        /// <param name="id">Target AccountID</param>
-        public Task<Relationship> UnmuteBoosts(int id)
-        {
-            return GetClient().Post<Relationship>(string.Format(ApiMethods.UnmuteBoosts, id));
-        }
-
-        /// <summary>
         /// Getting an account's relationships
         /// </summary>
         /// <returns>The relationships that given ID</returns>
@@ -278,7 +258,7 @@ namespace Mastodot
         /// <param name="maxId">MaxID</param>
         /// <param name="sinceId">SinceID</param>
         /// <param name="limit">Maximum number of accounts to get (Default 40, Max 80)</param>
-        public Task<ResponseCollection<Account>> GetBlockedUsers(int? maxId = default(int?), int? sinceId = default(int?)
+        public Task<ResponseCollection<Account>> GetBlockedUsers(string maxId = default(string), int? sinceId = default(int?)
                                                           , int limit = 40)
         {
             var query = new Dictionary<string, object>
@@ -297,7 +277,7 @@ namespace Mastodot
         /// <param name="maxId">MaxID</param>
         /// <param name="sinceId">SinceID</param>
         /// <param name="limit">Maximum number of accounts to get (Default 20, Max 40)</param>
-        public Task<ResponseCollection<Status>> GetFavourites(int? maxId = default(int?), int? sinceId = default(int?)
+        public Task<ResponseCollection<Status>> GetFavourites(string maxId = default(string), int? sinceId = default(int?)
                                                        , int limit = 20)
         {
             var query = new Dictionary<string, object>
@@ -316,7 +296,7 @@ namespace Mastodot
         /// <param name="maxId">MaxID</param>
         /// <param name="sinceId">SinceID</param>
         /// <param name="limit">Maximum number of accounts to get (Default 40, Max 80)</param>
-        public Task<ResponseCollection<Account>> GetFollowRequests(int? maxId = default(int?), int? sinceId = default(int?)
+        public Task<ResponseCollection<Account>> GetFollowRequests(string maxId = default(string), int? sinceId = default(int?)
                                                             , int limit = 40)
         {
             var query = new Dictionary<string, object>
@@ -400,7 +380,7 @@ namespace Mastodot
         /// <param name="maxId">MaxID</param>
         /// <param name="sinceId">SinceID</param>
         /// <param name="limit">Maximum number of accounts to get (Default 40, Max 80)</param>
-        public Task<ResponseCollection<Account>> GetMutes(int? maxId = default(int?), int? sinceId = default(int?)
+        public Task<ResponseCollection<Account>> GetMutes(string maxId = default(string), int? sinceId = default(int?)
                                                    , int limit = 40)
         {
             var query = new Dictionary<string, object>
@@ -419,7 +399,7 @@ namespace Mastodot
         /// <param name="maxId">MaxID</param>
         /// <param name="sinceId">SinceID</param>
         /// <param name="limit">Maximum number of accounts to get (Default 15, Max 30)</param>
-        public Task<ResponseCollection<Notification>> GetNotifications(int? maxId = default(int?), int? sinceId = default(int?)
+        public Task<ResponseCollection<Notification>> GetNotifications(string maxId = default(string), int? sinceId = default(int?)
                                                                 , int limit = 15)
         {
             var query = new Dictionary<string, object>
@@ -502,7 +482,7 @@ namespace Mastodot
         /// </summary>
         /// <returns>The Status</returns>
         /// <param name="id">Target StatusID</param>
-        public Task<Status> GetStatus(int id)
+        public Task<Status> GetStatus(long id)
         {
             return GetClient().Get<Status>(string.Format(ApiMethods.GetStatus, id));
         }
@@ -513,7 +493,7 @@ namespace Mastodot
         /// </summary>
         /// <returns>The staus Context</returns>
         /// <param name="id">Target StatusID</param>
-        public Task<Context> GetStausContext(int id)
+        public Task<Context> GetStausContext(long id)
         {
             return GetClient().Get<Context>(string.Format(ApiMethods.GetStatusContext, id));
         }
@@ -539,7 +519,7 @@ namespace Mastodot
         /// <param name="sinceId">Since ID</param>
         /// <param name="limit">Maximum number of accounts to get (Default 40, Max 80)</param>
         public Task<ResponseCollection<Account>> GetStatusRebloggedAccounts(int id
-                                                                    , int? maxId = default(int?), int? sinceId = default(int?)
+                                                                    , string maxId = default(string), int? sinceId = default(int?)
                                                                     , int limit = 40)
         {
             var query = new Dictionary<string, object>
@@ -561,7 +541,7 @@ namespace Mastodot
         /// <param name="maxId">MaxID</param>
         /// <param name="sinceId">SinceID</param>
         public Task<ResponseCollection<Account>> GetStatusFavouritedAccounts(int id
-                                                                     , int? maxId = default(int?), int? sinceId = default(int?)
+                                                                     , string maxId = default(string), int? sinceId = default(int?)
                                                                      , int limit = 40)
         {
             var query = new Dictionary<string, object>
@@ -662,7 +642,7 @@ namespace Mastodot
         /// <param name="maxId">MaxID</param>
         /// <param name="sinceId">SinceID</param>
         /// <param name="limit">Maximum number of accounts to get (Default 20, Max 40)</param>
-        public Task<ResponseCollection<Status>> GetRecentHomeTimeline(int? maxId = default(int?), int? sinceId = default(int?)
+        public Task<ResponseCollection<Status>> GetRecentHomeTimeline(string maxId = default(string), int? sinceId = default(int?)
                                                                       , int limit = 20)
         {
             var query = new Dictionary<string, object>
@@ -684,7 +664,7 @@ namespace Mastodot
         /// <param name="sinceId">SinceID</param>
         /// <param name="limit">Maximum number of accounts to get (Default 20, Max 40)</param>
         public Task<ResponseCollection<Status>> GetRecentPublicTimeline(bool? local = null
-                                                                        , int? maxId = default(int?), int? sinceId = default(int?)
+                                                                        , string maxId = default(string), int? sinceId = default(int?)
                                                                         , int limit = 20)
         {
             var query = new Dictionary<string, object>
@@ -708,7 +688,7 @@ namespace Mastodot
         /// <param name="sinceId">SinceID</param>
         public Task<ResponseCollection<Status>> GetRecentHashtagTimeline(string hashtag
                                                                          , bool? local = null
-                                                                         , int? maxId = default(int?), int? sinceId = default(int?)
+                                                                         , string maxId = default(string), int? sinceId = default(int?)
                                                                          , int limit = 20)
         {
             var query = new Dictionary<string, object>
@@ -777,7 +757,7 @@ namespace Mastodot
         }
 
         public Task<ResponseCollection<T>> CustomCollectionGet<T>(string type, IDictionary<string, object> param = null
-                                                                 , int? maxId = default(int?), int? sinceId = default(int?))
+                                                                 , string maxId = default(string), int? sinceId = default(int?))
             where T : IBaseMastodonEntity
         {
             var query = ((param as Dictionary<string, object>) ?? (new Dictionary<string, object>()))
@@ -832,11 +812,11 @@ namespace Mastodot
             return self;
         }
 
-        public static Dictionary<string, object> AddRangeParameter(this Dictionary<string, object> dict, int? maxId, int? sinceId)
+        public static Dictionary<string, object> AddRangeParameter(this Dictionary<string, object> dict, string maxId, int? sinceId)
         {
-            if (maxId.HasValue)
+            if (string.IsNullOrEmpty(maxId) != true)
             {
-                dict.Add("max_id", maxId.Value);
+                dict.Add("max_id", maxId);
             }
             if (sinceId.HasValue)
             {

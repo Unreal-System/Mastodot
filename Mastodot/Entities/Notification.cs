@@ -7,7 +7,7 @@ namespace Mastodot.Entities
     public class Notification: BaseMastodonEntity, IStreamEntity
     {
         [JsonProperty("id")]
-        public int Id { get; set; }
+        public long Id { get; set; }
 
         [JsonProperty("type")]
         public NotificationType Type { get; set; }

@@ -3,6 +3,6 @@ namespace Mastodot.Entities
 {
     public class DeletedStream: IStreamEntity
     {
-        public int StatusId { get; set; }
+        public long StatusId { get; set; }
     }
 }

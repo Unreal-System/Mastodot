@@ -8,7 +8,7 @@ namespace Mastodot.Entities
     public class Status : BaseMastodonEntity, IStreamEntity
     {
         [JsonProperty("id")]
-        public int Id { get; set; }
+        public long Id { get; set; }
 
         [JsonProperty("uri")]
         public string Uri { get; set; }
@@ -20,10 +20,10 @@ namespace Mastodot.Entities
         public Account Account { get; set; }
 
         [JsonProperty("in_reply_to_id")]
-        public int? InReplyToId { get; set; }
+        public long? InReplyToId { get; set; }
 
         [JsonProperty("in_reply_to_account_id")]
-        public int? InReplyToAccountId { get; set; }
+        public long? InReplyToAccountId { get; set; }
 
         [JsonProperty("reblog")]
         public Status Reblog { get; set; }
@@ -36,10 +36,10 @@ namespace Mastodot.Entities
         public DateTime CreatedAt { get; set; }
 
         [JsonProperty("reblogs_count")]
-        public int ReblogsCount { get; set; }
+        public long ReblogsCount { get; set; }
 
         [JsonProperty("favourites_count")]
-        public int FavouritesCount { get; set; }
+        public long FavouritesCount { get; set; }
 
         [JsonProperty("reblogged")]
         public bool? Reblogged { get; set; }

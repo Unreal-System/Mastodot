@@ -15,7 +15,6 @@ namespace Mastodot.Utils.JsonConverters
 
         public override object ReadJson(JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer)
         {
-            serializer.MissingMemberHandling = MissingMemberHandling.Ignore;
             if (objectType.Name.StartsWith("IEnumerable"))
             {
                 var jArray = JArray.Load(reader);

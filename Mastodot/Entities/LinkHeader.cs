@@ -3,7 +3,9 @@ namespace Mastodot.Entities
 {
     public class LinkHeader
     {
-        public int? Next { get; set; }
-        public int? Prev { get; set; }
+        /// <summary>Next</summary>
+        public string Next { get; set; }
+        /// <summary>Previous</summary>
+        public string Prev { get; set; }
     }
 }
