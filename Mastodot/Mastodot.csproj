@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Title>Mastodot</Title>
     <!-- When $ dotnet pack -c Release , uncomment out and comment out TargetFramework section -->
-    <TargetFrameworks>netstandard2.0;net45;net46;net48</TargetFrameworks>
+    <TargetFrameworks>netstandard2.0</TargetFrameworks>
     <!--<TargetFramework>netstandard1.3</TargetFramework>-->
     <Authors>UnrealSystem</Authors>
     <Description>A .NET Mastodon Library | Source By:yamachu | Edit By:UnrealSystem</Description>
