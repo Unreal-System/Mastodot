@@ -1,0 +1,31 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <ImplicitUsings>disable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <PackageId>MastodotRev</PackageId>
+    <Version>1.1.2</Version>
+    <Authors>yamachu;UnrealSystem</Authors>
+    <Description>A .NET Mastodon Library | Source By:yamachu | RevEdit By:UnrealSystem</Description>
+    <Copyright>Source By:yamachu | RevEdit By:UnrealSystem</Copyright>
+    <PackageProjectUrl>https://github.com/Unreal-System/Mastodot</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/Unreal-System/Mastodot</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageTags>Mastodon</PackageTags>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove=".gitignore" />
+    <None Remove="LICENSE" />
+    <None Remove="README.ja.md" />
+    <None Remove="README.md" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+    <PackageReference Include="System.Reactive.Linq" Version="5.0.0" />
+  </ItemGroup>
+
+</Project>
