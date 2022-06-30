@@ -3,20 +3,21 @@
   <PropertyGroup>
     <Title>Mastodot</Title>
     <!-- When $ dotnet pack -c Release , uncomment out and comment out TargetFramework section -->
-    <TargetFrameworks>netstandard1.1;netstandard1.3;net45;net46</TargetFrameworks>
+    <TargetFrameworks>netstandard2.0;net45;net46;net48</TargetFrameworks>
     <!--<TargetFramework>netstandard1.3</TargetFramework>-->
-    <Authors>yamachu</Authors>
-    <Description>A .NET Mastodon Library</Description>
-    <PackageId>Mastodot</PackageId>
+    <Authors>UnrealSystem</Authors>
+    <Description>A .NET Mastodon Library | Source By:yamachu | Edit By:UnrealSystem</Description>
+    <PackageId>Mastodot_Rev</PackageId>
     <PackageVersion>1.1.2</PackageVersion>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
     <PackageTags>Mastodon</PackageTags>
-    <PackageProjectUrl>https://github.com/yamachu/Mastodot</PackageProjectUrl>
+    <PackageProjectUrl>https://github.com/Unreal-System/Mastodot</PackageProjectUrl>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
-    <Version>1.1.2</Version>
-    <RepositoryUrl>https://github.com/yamachu/Mastodot</RepositoryUrl>
+    <Version>1.1.3</Version>
+    <RepositoryUrl>https://github.com/Unreal-System/Mastodot</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <PackageReleaseNotes></PackageReleaseNotes>
+    <Copyright>Source By:yamachu | Edit By:UnrealSystem</Copyright>
   </PropertyGroup>
 
   <ItemGroup>
